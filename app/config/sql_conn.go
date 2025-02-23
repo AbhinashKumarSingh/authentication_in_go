@@ -14,7 +14,7 @@ var DB *gorm.DB
 func InitDB() {
 	var err error
 
-	dsn := "root:erudent123@unix(/opt/homebrew/var/mysql/mysql.sock)/users_db?parseTime=true&tls=false"
+	dsn := "root:{{password}}@unix(/opt/homebrew/var/mysql/mysql.sock)/users_db?parseTime=true&tls=false"
 
 	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
